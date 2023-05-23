@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Espera a que se cargue completamente el documento
+
+  $(document).ready(function() {
+    // Agregar animaciones de desplazamiento suave a todos los enlaces anclados
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top
+        }, 1000);
+      }
+    });
+  });
+  
+
   // Obtener los botones "Agregar al carrito"
   const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
@@ -136,3 +152,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Cargar los elementos del carrito desde el almacenamiento local 
   loadCartItems(); 
 });
+
+
+
+
+
+
