@@ -1,0 +1,510 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #fff;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px; /* limit the size of the .logo element */
+}
+
+.logo img {
+  max-height: 60px;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li:not(:last-child) {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  border-radius: 5%;
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.cart i {
+  margin-right: 5px;
+}
+
+
+
+
+/* Estilos para el carrito */
+
+.cart span {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #f00;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+/* Estilos para el carrito de compras */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  transition: right 0.3s ease;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-header h2 {
+  margin: 0;
+}
+
+.close-cart {
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+.cart-items {
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.cart-item-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cart-item-price {
+  margin: 0;
+  font-size: 14px;
+  color: #999;
+}
+
+.remove-item {
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.cart-footer p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cart-footer a {
+  text-decoration: none;
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-footer a:hover {
+  background-color: #333;
+}
+
+/* Página de productos */
+main {
+  margin-top: 100px; /* add a margin of 100 pixels to the top of the main section */
+}
+
+/* Estilos para seccion de hero ademas de su slider*/
+.hero {
+  background-image: url('https://img.freepik.com/fotos-premium/textura-fondo-natural-madera-vieja_55710-564.jpg?w=1380');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  
+}
+
+.text-slider {
+
+  position: absolute;
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #d4af37;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.product img {
+  background-color: #000;
+  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.product h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Pie de página */
+footer {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.contact h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.social {
+  display: flex;
+}
+
+.social li {
+  margin-right: 20px;
+}
+
+.social a {
+  color: #fff;
+  font-size: 24px;
+}
+
+.social a:hover {
+  color: #d4af37;
+}
+
+/* slider de imagenes */
+.image-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  width: 100%;
+  animation: sliderAnimation 20s infinite; /* Ajusta el tiempo según tus necesidades */
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes sliderAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  16.666% {
+    transform: translateX(-100%);
+  }
+  33.333% {
+    transform: translateX(-200%);
+  }
+  50% {
+    transform: translateX(-300%);
+  }
+  66.666% {
+    transform: translateX(-400%);
+  }
+  83.333% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(-600%);
+  }
+}
+
+
+
+
+/* seccion nosotros */
+
+
+#nosotros {
+  background-color: #000;
+  padding: 80px 80px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+#nosotros h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+#nosotros p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+#nosotros .container,
+#nosotros .row {
+  width: 100%;
+}
+
+#nosotros .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nosotros .text {
+  flex-basis: 50%;
+}
+
+#nosotros img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-right: 40px;
+  max-height: 400px;
+}
+
+
+
+/* Contacto */
+#contacto {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 60px;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+#contacto form {
+  margin-top: 20px;
+  display: inline-block;
+  text-align: left;
+}
+
+#contacto .form-group {
+  margin-bottom: 20px;
+}
+
+#contacto label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f7f7f7;
+  color: #555;
+  transition: border-color 0.3s ease-in-out;
+  height: auto;
+}
+
+#contacto input[type="text"]:focus,
+#contacto input[type="email"]:focus,
+#contacto input[type="tel"]:focus,
+#contacto textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#contacto textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f7f7f7;
+  color: #555;
+  transition: border-color 0.3s ease-in-out;
+  margin: 20px 0;
+  height: 100px;
+  resize: none;
+}
+
+#contacto button[type="submit"] {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+  font-size: 18px;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+#contacto button[type="submit"]:hover {
+  background-color: #333;
+  border-color: #333;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
